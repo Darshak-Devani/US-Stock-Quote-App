@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<div class="alert alert-primary"><b>Bought!</b></div>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>Transacted</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for detail in details%}
+      <tr>
+        <td>{{detail["symbol"]}}</td>
+        <td>{{detail["shares"]}}</td>
+        <td>{{detail["price"]}}</td>
+        <td>${{detail["transacted"]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+{% endblock %}

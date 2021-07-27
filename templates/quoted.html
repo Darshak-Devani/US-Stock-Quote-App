@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{symbol["symbol"]}}</td>
+        <td>{{symbol["name"]}}</td>
+        <td>${{symbol["price"]}}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

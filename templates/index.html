@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="alert alert-primary"><b>Bought!</b></div>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for detail in details%}
+      <tr>
+        <td>{{detail["stock"]}}</td>
+        <td>{{detail["name"]}}</td>
+        <td>{{detail["quantity"]}}</td>
+        <td>${{detail["price"]}}</td>
+        <td>${{detail["TOTAL"]}}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+          <td><b>CASH</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>${{cash}}</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>${{cash + total}}</b></td>
+      </tr>
+    </tbody>
+
+  </table>
+{% endblock %}
